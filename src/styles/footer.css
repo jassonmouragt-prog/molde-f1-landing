@@ -1,0 +1,53 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  padding-block: 40px;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo-img {
+  display: block;
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.footer__nav a {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.footer__nav a:hover {
+  color: var(--rose-deep);
+}
+
+.footer__legal {
+  width: 100%;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+}

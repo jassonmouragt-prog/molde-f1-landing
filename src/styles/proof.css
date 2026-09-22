@@ -1,0 +1,75 @@
+/* ============================================================
+   PROOF — prova social
+   ============================================================ */
+.proof__head {
+  max-width: 680px;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.proof__title {
+  margin-top: 18px;
+}
+
+/* galeria de depoimentos — destaque da seção */
+.proof__gallery {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 36px);
+  align-items: start;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.proof__media {
+  margin: 0;
+}
+
+.proof__media--mid {
+  margin-top: 44px;
+}
+
+.proof__frame {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  transform: translateZ(0);
+}
+
+.proof__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* fechamento da seção */
+.proof__side {
+  margin-top: 72px;
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.proof__side-highlight {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--ink);
+}
+
+.proof__side-text {
+  margin-top: 18px;
+  color: var(--muted);
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+.proof__side .btn {
+  margin-top: 30px;
+}

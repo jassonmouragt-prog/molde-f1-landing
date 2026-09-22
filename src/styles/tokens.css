@@ -1,0 +1,58 @@
+/* ============================================================
+   DESIGN TOKENS — Molde F1 / Carol Olmena
+   ============================================================ */
+
+:root {
+  /* Color — black / light gray / gold palette */
+  --bg: #f0f0f2;
+  --bg-soft: #e4e4e7;
+  --surface: #fafafa;
+
+  --ink: #0b0b0f;
+  --ink-soft: #3f3f46;
+  --muted: #71717a;
+
+  --line: rgba(11, 11, 15, 0.09);
+  --line-strong: rgba(11, 11, 15, 0.18);
+
+  /* Accents — noir + gold + action green */
+  --rose: #c9a227;
+  --rose-soft: #e9cf8a;
+  --rose-deep: #a3822a;
+  --plum: #a3822a;
+  --plum-deep: #0b0b0f;
+
+  /* Action (oferta) — verde premium */
+  --green: #17b04a;
+  --green-deep: #0c7c35;
+  --green-glow: rgba(41, 196, 103, 0.55);
+
+  /* Gradients */
+  --grad-rose: linear-gradient(120deg, #f0d47e 0%, #d4ad3f 55%, #9c7a2b 100%);
+  --grad-ink: linear-gradient(135deg, #16161a 0%, #0b0b0f 100%);
+
+  /* Type — all sans-serif */
+  --font-display: 'Archivo', 'Manrope', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Radius */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+
+  /* Shadow — cool neutral */
+  --shadow-xs: 0 1px 2px rgba(11, 11, 15, 0.05);
+  --shadow-sm: 0 10px 30px -18px rgba(11, 11, 15, 0.2);
+  --shadow-md: 0 24px 60px -30px rgba(11, 11, 15, 0.3);
+
+  /* Layout */
+  --container: 1180px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --section-pad: clamp(72px, 9vw, 128px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.7s;
+}

@@ -1,0 +1,355 @@
+/* ============================================================
+   PROBLEM — transição / identificação
+   Visual: do ruído à estrutura — um fio dourado se forma
+   entre fragmentos soltos e etapas conectadas.
+   ============================================================ */
+.problem {
+  background: var(--bg-soft);
+}
+
+.problem__head {
+  max-width: 720px;
+}
+
+.problem__title {
+  margin-top: 18px;
+}
+
+.problem__sub {
+  margin-top: 18px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: var(--ink-soft);
+}
+
+/* ---- terraço / canvas ---- */
+.problem__canvas {
+  position: relative;
+  margin-top: 56px;
+  aspect-ratio: 1200 / 420;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background:
+    radial-gradient(110% 95% at 98% 8%, rgba(201, 166, 79, 0.14), transparent 55%),
+    linear-gradient(160deg, var(--surface), var(--bg-soft));
+}
+
+.problem__line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* fragmentos soltos (ruído) */
+.problem__scatter line,
+.problem__scatter path {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 4 7;
+  opacity: 0;
+  transition: opacity 0.9s ease 150ms;
+}
+
+.problem__scatter line:nth-child(1) { transition-delay: 160ms; }
+.problem__scatter line:nth-child(2) { transition-delay: 240ms; }
+.problem__scatter line:nth-child(3) { transition-delay: 320ms; }
+.problem__scatter line:nth-child(4) { transition-delay: 400ms; }
+.problem__scatter line:nth-child(5) { transition-delay: 480ms; }
+.problem__scatter path:nth-child(6) { transition-delay: 560ms; }
+
+.problem__canvas.is-in .problem__scatter line {
+  opacity: 0.7;
+}
+
+.problem__canvas.is-in .problem__scatter path {
+  opacity: 0.7;
+}
+
+/* origem do fio */
+.problem__knot {
+  fill: rgba(201, 166, 79, 0.9);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s var(--ease-out) 320ms, opacity 0.6s ease 320ms;
+}
+
+.problem__canvas.is-in .problem__knot {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* trilho + fio principal */
+.problem__thread-echo {
+  fill: none;
+  stroke: rgba(201, 166, 79, 0.16);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.5s var(--ease-out) 300ms;
+}
+
+.problem__thread {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.3s var(--ease-out) 380ms;
+}
+
+.problem__canvas.is-in .problem__thread-echo,
+.problem__canvas.is-in .problem__thread {
+  stroke-dashoffset: 0;
+}
+
+/* orb final */
+.problem__orb {
+  fill: rgba(201, 166, 79, 0.22);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.7s var(--ease-out) 1.05s;
+}
+
+.problem__orb-core {
+  fill: var(--rose);
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 0.6s var(--ease-out) 1.15s;
+}
+
+.problem__pulse {
+  fill: none;
+  stroke: rgba(201, 166, 79, 0.55);
+  stroke-width: 1.6;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+
+.problem__canvas.is-in .problem__orb { transform: scale(1); }
+.problem__canvas.is-in .problem__orb-core { transform: scale(1); }
+
+.problem__canvas.is-in .problem__pulse {
+  animation: orbPulse 2.8s var(--ease-out) 1.5s infinite;
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(0.6); opacity: 0; }
+  20% { opacity: 0.6; }
+  70%, 100% { transform: scale(2.6); opacity: 0; }
+}
+
+/* marcas de zona */
+.problem__zone-tag {
+  position: absolute;
+  top: 26px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.problem__zone-tag--neg {
+  left: 6%;
+}
+
+.problem__zone-tag--pos {
+  right: 6%;
+  color: var(--rose-deep);
+}
+
+/* fragmentos espalhados */
+.problem__frags {
+  position: absolute;
+  inset: 0;
+}
+
+.problem__frag {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px dashed var(--line-strong);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  opacity: 0;
+  transform: rotate(var(--rot, 0deg)) translateY(18px);
+  transition:
+    opacity 0.7s ease var(--d),
+    transform 0.7s var(--ease-out) var(--d);
+  animation: fragFloat 7s ease-in-out infinite;
+  animation-delay: calc(var(--d) + 1.4s);
+}
+
+.problem__frag--a { left: 3%; top: 15%; }
+.problem__frag--b { left: 20%; top: 35%; }
+.problem__frag--c {
+  left: 5%;
+  top: 57%;
+  width: 104px;
+  height: 64px;
+  padding: 0;
+  border-color: rgba(11, 11, 15, 0.14);
+  background: transparent;
+}
+
+.problem__frag--c svg {
+  width: 46px;
+  height: 20px;
+  margin-inline: auto;
+}
+
+.problem__frag--c line {
+  stroke: var(--line-strong);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-dasharray: 3 5;
+}
+
+.problem__canvas.is-in .problem__frag {
+  opacity: 1;
+  transform: rotate(var(--rot, 0deg)) translateY(0);
+}
+
+@keyframes fragFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -6px; }
+}
+
+/* nós conectados */
+.problem__nodes {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.problem__node {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  transition: opacity 0.75s ease var(--d);
+}
+
+.problem__node--one {
+  left: 52%;
+  top: 50%;
+}
+
+.problem__node--two {
+  left: 65%;
+  top: 38%;
+}
+
+.problem__node--three {
+  left: 81%;
+  top: 27%;
+}
+
+.problem__canvas.is-in .problem__node {
+  opacity: 1;
+}
+
+.problem__node--flip {
+  flex-direction: row-reverse;
+}
+
+.problem__node--three {
+  flex-direction: row-reverse;
+}
+
+.problem__node--three .problem__node-label {
+  text-align: right;
+}
+
+.problem__node-dot {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--grad-rose);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.08rem;
+  box-shadow: 0 12px 26px -12px rgba(156, 122, 43, 0.6);
+  transform: scale(0);
+  transition: transform 0.6s var(--ease-out) var(--d);
+}
+
+.problem__canvas.is-in .problem__node-dot {
+  transform: scale(1);
+}
+
+.problem__node-label {
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.12;
+  color: var(--ink);
+}
+
+.problem__node--flip .problem__node-label {
+  text-align: right;
+}
+
+/* selos */
+.problem__stamp {
+  position: absolute;
+  bottom: 24px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.8s ease 850ms;
+}
+
+.problem__canvas.is-in .problem__stamp {
+  opacity: 1;
+}
+
+.problem__stamp--warn {
+  left: 6%;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  color: var(--muted);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  text-decoration: line-through;
+  text-decoration-color: var(--rose-deep);
+}
+
+.problem__stamp--good {
+  right: 6%;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  color: var(--ink);
+  background: var(--grad-rose);
+}

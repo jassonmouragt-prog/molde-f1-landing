@@ -1,0 +1,472 @@
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Tablet (<= 1024px)
+   ------------------------------------------------------------ */
+@media (max-width: 1024px) {
+  .problem__canvas {
+    aspect-ratio: 1200 / 420;
+  }
+
+  .problem__node {
+    gap: 10px;
+  }
+
+  .problem__node-dot {
+    width: 40px;
+    height: 40px;
+    font-size: 0.98rem;
+  }
+
+  .problem__node-label {
+    font-size: 0.9rem;
+    max-width: 13ch;
+  }
+
+  .objections__list {
+    grid-template-columns: 1fr;
+  }
+
+  .revenue__tiers {
+    gap: 12px;
+  }
+
+  .proof__gallery {
+    margin-top: 48px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .proof__media--mid {
+    margin-top: 0;
+  }
+}
+
+/* ------------------------------------------------------------
+   Mobile (<= 768px)
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+  .section {
+    padding-block: 64px;
+  }
+
+  /* header */
+  .site-header__inner {
+    height: 64px;
+  }
+
+  .site-logo__mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* hero — banner full-bleed, conteúdo por cima */
+  .hero {
+    padding-top: 108px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: clamp(1.7rem, 7.4vw, 2.2rem);
+  }
+
+  .hero__strip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__offer {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero__offer .offer__btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* problem — mobile: painel noir + fio dourado vertical que se desenha */
+  .problem__canvas {
+    margin-top: 40px;
+    aspect-ratio: auto;
+    min-height: 0;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 22px 26px;
+    background:
+      radial-gradient(85% 55% at 92% 0%, rgba(212, 173, 63, 0.2), transparent 62%),
+      var(--grad-ink);
+    border: 1px solid rgba(212, 173, 63, 0.28);
+  }
+
+  .problem__canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(70% 45% at 15% 100%, rgba(212, 173, 63, 0.14), transparent 60%);
+    pointer-events: none;
+  }
+
+  .problem__line {
+    display: none;
+  }
+
+  .problem__zone-tag {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    font-size: 0.66rem;
+  }
+
+  .problem__zone-tag--neg {
+    order: -1;
+    color: rgba(250, 250, 250, 0.7);
+  }
+
+  .problem__zone-tag--pos {
+    order: 3;
+    margin-top: 4px;
+    color: #f0d47e;
+  }
+
+  .problem__frags {
+    position: static;
+    inset: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .problem__frag {
+    position: static;
+    font-size: 0.76rem;
+    padding: 10px 13px;
+    animation: none;
+    background: rgba(250, 250, 250, 0.96);
+  }
+
+  .problem__frag--c {
+    display: none;
+  }
+
+  .problem__stamp {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    width: max-content;
+  }
+
+  .problem__stamp--warn {
+    order: 1;
+    background: rgba(250, 250, 250, 0.08);
+    border: 1px solid rgba(250, 250, 250, 0.24);
+    color: rgba(250, 250, 250, 0.72);
+  }
+
+  .problem__stamp--good {
+    order: 4;
+  }
+
+  .problem__nodes {
+    order: 2;
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 4px 0 0 14px;
+    padding-left: 22px;
+  }
+
+  .problem__nodes::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 19px;
+    bottom: 19px;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #f0d47e, #d4ad3f 55%, #9c7a2b);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.1s var(--ease-out) 0.35s;
+    z-index: 0;
+  }
+
+  .problem__canvas.is-in .problem__nodes::before {
+    transform: scaleY(1);
+  }
+
+  .problem__node {
+    position: static;
+    transform: none;
+    gap: 12px;
+  }
+
+  .problem__node--three,
+  .problem__node--flip {
+    flex-direction: row;
+  }
+
+  .problem__node--flip .problem__node-label,
+  .problem__node--three .problem__node-label {
+    text-align: left;
+  }
+
+  .problem__node-dot {
+    position: relative;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    font-size: 0.92rem;
+  }
+
+  .problem__node-label {
+    font-size: 0.86rem;
+    max-width: 22ch;
+    color: #f0f0f2;
+  }
+
+  /* revenue — mobile: metros horizontais empilhados, não desktop espremido */
+  .revenue__tiers {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-inline: 0;
+    margin-top: 44px;
+  }
+
+  .revenue__tier {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .revenue__tier-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  .revenue__tier-count {
+    font-size: 0.68rem;
+  }
+
+  .revenue__tier-bar-track {
+    width: 100%;
+    max-width: none;
+    height: 14px;
+    border-radius: 8px;
+    background: rgba(11, 11, 15, 0.06);
+    background-image: none;
+    overflow: hidden;
+  }
+
+  .revenue__tier-bar {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1s var(--ease-out);
+  }
+
+  .revenue__tier-bar.is-in {
+    transform: scaleX(1);
+  }
+
+  .revenue__tier-bar.is-in {
+    width: var(--fill, 100%);
+  }
+
+  .revenue__baseline {
+    display: none;
+  }
+
+  .revenue__split {
+    grid-template-columns: 1fr;
+  }
+
+  .revenue__split-right .revenue__offer {
+    width: 100%;
+  }
+
+  .revenue__split-right .revenue__offer .offer__btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* proof — galeria de depoimentos em coluna única, centralizada */
+  .proof__gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 460px;
+  }
+
+  .proof__media--mid {
+    margin-top: 0;
+  }
+
+  .proof__side {
+    margin-top: 56px;
+  }
+
+  /* modules — timeline em coluna única */
+  .journey {
+    margin-top: 48px;
+    gap: 28px;
+  }
+
+  .journey__track {
+    left: 22px;
+    transform: none;
+  }
+
+  .journey__item,
+  .journey__item--left,
+  .journey__item--right {
+    width: auto;
+    margin: 0;
+    text-align: left;
+    padding-left: 62px;
+  }
+
+  .journey__item--left .journey__node,
+  .journey__item--right .journey__node {
+    left: 0;
+    right: auto;
+  }
+
+  .journey__card {
+    text-align: left;
+  }
+
+  /* objections */
+  .objections__list {
+    margin-top: 40px;
+  }
+
+  .objection {
+    padding: 22px 20px;
+  }
+
+  /* proof */
+  .proof__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .proof__media {
+    order: -1;
+  }
+
+  /* transform */
+  .transform__lanes {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .lane__flow {
+    display: none;
+  }
+
+  /* final */
+  .final__steps {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .final__step-ln {
+    display: none;
+  }
+
+  .final__offer {
+    width: 100%;
+  }
+
+  .final__offer .offer__btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* faq */
+  .faq__a > p {
+    padding-right: 24px;
+  }
+
+  /* footer */
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ------------------------------------------------------------
+   Mobile pequeno (<= 420px)
+   ------------------------------------------------------------ */
+@media (max-width: 420px) {
+  .site-header__cta {
+    padding: 10px 16px;
+    font-size: 0.7rem;
+  }
+
+  .site-logo__text strong {
+    font-size: 1rem;
+  }
+
+  .hero__badge {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    padding: 8px 14px;
+  }
+
+  .hero__strip {
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .hero__strip li {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .revenue__tier-count {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+  }
+
+  .revenue__tier-value {
+    font-size: 1.5rem;
+  }
+
+  .objection {
+    gap: 14px;
+    padding: 20px 16px;
+  }
+
+  .objection__speech {
+    font-size: 1.08rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Acessibilidade: tamanho de fonte ampliado
+   ------------------------------------------------------------ */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1240px;
+  }
+}

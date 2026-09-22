@@ -1,0 +1,19 @@
+/* ============================================================
+   INDEX — ordem de importação
+   ============================================================ */
+@import './tokens.css';
+@import './base.css';
+@import './header.css';
+@import './hero.css';
+@import './problem.css';
+@import './revenue.css';
+@import './offer.css';
+@import './modules.css';
+@import './objections.css';
+@import './big.css';
+@import './proof.css';
+@import './transform.css';
+@import './final.css';
+@import './faq.css';
+@import './footer.css';
+@import './responsive.css';

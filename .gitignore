@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Env
+.env
+.env.*
+
+# Assets de origem (cópias otimizadas ficam em public/images/)
+banner hero *.png
+banner hero *.jpeg
+logo molde f1 *.png
+depoimento *.jpeg

@@ -1,0 +1,175 @@
+/* ============================================================
+   FINAL — fechamento + CTA final
+   ============================================================ */
+.final {
+  position: relative;
+  padding-block: clamp(88px, 12vw, 150px);
+  background: var(--grad-ink);
+  color: var(--surface);
+  overflow: hidden;
+}
+
+.final__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.final__glow {
+  position: absolute;
+  width: 760px;
+  height: 760px;
+  border-radius: 50%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(201, 166, 79, 0.24), transparent 62%);
+  filter: blur(40px);
+}
+
+.final__nail {
+  position: absolute;
+  opacity: 0.12;
+  width: 150px;
+}
+
+.final__nail--a {
+  top: 6%;
+  left: 4%;
+  transform: rotate(10deg);
+}
+
+.final__nail--b {
+  bottom: 4%;
+  right: 5%;
+  transform: rotate(-14deg);
+  width: 200px;
+}
+
+.final__inner {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* escolha */
+.final__choice {
+  max-width: 820px;
+}
+
+.final__choice-ghost {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  line-height: 1.3;
+  color: rgba(250, 250, 250, 0.55);
+}
+
+.final__choice-ghost em {
+  font-style: italic;
+  color: rgba(250, 250, 250, 0.7);
+}
+
+.final__choice-real {
+  margin-top: 22px;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4vw, 2.9rem);
+  line-height: 1.04;
+  font-weight: 800;
+  color: var(--surface);
+}
+
+.final__choice-real strong {
+  background: var(--grad-rose);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* progressão COMECE · PRATIQUE · EVOLUA */
+.final__steps-container {
+  margin-top: 64px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.final__steps {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: end;
+  column-gap: clamp(14px, 3vw, 34px);
+}
+
+.final__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.final__step-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(250, 250, 250, 0.45);
+}
+
+.final__step-word {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  font-weight: 800;
+  color: var(--surface);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.final__step-word--accent {
+  background: var(--grad-rose);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.final__step-ln {
+  width: 46px;
+  height: 1px;
+  margin-top: 4px;
+  background: linear-gradient(90deg, rgba(201, 166, 79, 0.5), transparent);
+  justify-self: center;
+}
+
+.final__steps-note {
+  margin-top: 26px;
+  color: rgba(250, 250, 250, 0.7);
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+/* CTA final */
+.final__cta-block {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  width: 100%;
+}
+
+.final__cta-title {
+  max-width: 18ch;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  font-weight: 550;
+}
+
+.final__offer {
+  max-width: min(100%, 480px);
+}
+
+.final__cta-text {
+  max-width: 56ch;
+  color: rgba(250, 250, 250, 0.72);
+  font-size: 0.98rem;
+}

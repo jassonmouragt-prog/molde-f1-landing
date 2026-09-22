@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16161a"/>
+      <stop offset="1" stop-color="#0b0b0f"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0d47e"/>
+      <stop offset="1" stop-color="#9c7a2b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="960" cy="120" r="260" fill="#d4ad3f" opacity="0.14"/>
+  <circle cx="180" cy="520" r="300" fill="#a3822a" opacity="0.16"/>
+  <g opacity="0.9" transform="translate(120,180)">
+    <path d="M60 8c28 24 48 48 48 88 0 60-28 136-48 136S12 156 12 96C12 56 32 32 60 8Z" fill="none" stroke="url(#acc)" stroke-width="4"/>
+    <path d="M60 44c14 14 24 28 24 54 0 36-14 88-24 88s-24-52-24-88c0-26 10-40 24-54Z" fill="url(#acc)" opacity="0.35"/>
+  </g>
+  <text x="1080" y="300" text-anchor="end" font-family="Manrope, Arial, sans-serif" font-size="88" font-weight="700" fill="#fafafa" letter-spacing="1">MOLDE F1</text>
+  <text x="1080" y="376" text-anchor="end" font-family="Manrope, Arial, sans-serif" font-size="30" fill="#fafafa" opacity="0.75" letter-spacing="6">MÉTODO ESTRUTURADO EM 7 MÓDULOS</text>
+  <text x="1080" y="430" text-anchor="end" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#f0d47e" letter-spacing="2">Do fundamento à execução</text>
+</svg>
