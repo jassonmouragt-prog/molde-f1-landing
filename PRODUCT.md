@@ -38,9 +38,10 @@ central é "do ruído à estrutura" — aprender o processo completo, sem juntar
 ## Capabilities and Constraints
 
 - Técnica ensinada: alongamento de unhas com Molde F1.
-- 7 módulos estruturados (nomes e descrições reais AINDA não definidos — pool de edição).
+- 7 módulos estruturados: Seja bem-vinda, Materiais, Preparação, Moldes, Aplicação, Manutenção e
+  Bônus sobre como fotografar e vender o trabalho.
 - NÃO definidos pela cliente (não inventar): prazo de acesso, garantia, certificado, suporte,
-  preço, formas de pagamento, plataforma, bônus. FAQ usa apenas o confirmado no briefing.
+  formas de pagamento e plataforma. FAQ usa apenas o confirmado no briefing.
 - Link de compra único e centralizado (`purchaseUrl` em src/config/site.ts, hoje `#oferta`).
 - Público misto: iniciantes e profissionais; a copy já afirma que não exige experiência prévia.
 - Não depender de produtos completos para começar (a copy aborda isso nas objeções).
@@ -63,7 +64,7 @@ central é "do ruído à estrutura" — aprender o processo completo, sem juntar
 - As 12 objeções com respostas, texto fixo do briefing (`src/data/objections.ts`).
 - Não há fotos da profissional nem print real ainda — imagens esperadas:
   `public/images/hero-photo.jpg` (hero) e `public/images/social-proof.jpg` (prova social).
-- Não foram entregues: nomes/descrições dos módulos, informações comerciais de FAQ e preço.
+- Não foram entregues: informações comerciais de FAQ.
   Sessão de design existente documentada em `SESSION-PROGRESS.md`.
 
 ## Product Principles

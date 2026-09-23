@@ -1,74 +1,60 @@
-/**
- * OS 7 MÓDULOS DO TREINAMENTO
- * ============================
- * ATENÇÃO: os nomes e conteúdos específicos dos módulos ainda NÃO foram
- * definidos pela cliente. Não invente conteúdo definitivo.
- *
- * Os campos abaixos são POOL DE EDIÇÃO. Preencha 'title' e 'description'
- * quando a cliente enviar os nomes reais. O texto placeholder é mantido
- * com um tom genérico e editável apenas durante o desenvolvimento.
- *
- * Dica: a descrição deve descrever a etapa, o que a aluna vai aprender na prática.
- */
+/** Os 7 módulos do treinamento, na ordem apresentada à aluna. */
 
 export interface ModuleItem {
   number: number
-  /** Preencher com o nome real do módulo quando enviado pela cliente */
   title: string
-  /** Preencher com a descrição real do módulo quando enviado pela cliente */
   description: string
-  /** Palavra-curta ilustrativa do momento do percurso (fundamento → execução) */
   stage: string
 }
 
 export const MODULES: ModuleItem[] = [
   {
     number: 1,
-    title: 'Etapa 01 — Ponto de partida',
+    title: 'Seja bem-vinda',
     description:
-      'Aqui entra o conteúdo real do Módulo 01: o que a aluna vai aprender primeiro. (Conteúdo em desenvolvimento)',
-    stage: 'Fundamento',
+      'Conheça o treinamento, organize seus estudos e entenda o caminho que vai guiar sua evolução no Molde F1.',
+    stage: 'Comece aqui',
   },
   {
     number: 2,
-    title: 'Etapa 02 — Ponto de partida',
+    title: 'Materiais',
     description:
-      'Aqui entra o conteúdo real do Módulo 02. (Conteúdo em desenvolvimento)',
-    stage: 'Base',
+      'Descubra os produtos e as ferramentas necessários para executar a técnica com organização e segurança.',
+    stage: 'Kit essencial',
   },
   {
     number: 3,
-    title: 'Etapa 03 — Construção',
+    title: 'Preparação',
     description:
-      'Aqui entra o conteúdo real do Módulo 03. (Conteúdo em desenvolvimento)',
-    stage: 'Estrutura',
+      'Aprenda a preparar corretamente as unhas para criar uma base limpa, aderente e pronta para a aplicação.',
+    stage: 'Base da técnica',
   },
   {
     number: 4,
-    title: 'Etapa 04 — Construção',
+    title: 'Moldes',
     description:
-      'Aqui entra o conteúdo real do Módulo 04. (Conteúdo em desenvolvimento)',
-    stage: 'Aplicação',
+      'Entenda como escolher, ajustar e posicionar o molde de acordo com as características de cada unha.',
+    stage: 'Escolha e ajuste',
   },
   {
     number: 5,
-    title: 'Etapa 05 — Execução',
+    title: 'Aplicação',
     description:
-      'Aqui entra o conteúdo real do Módulo 05. (Conteúdo em desenvolvimento)',
-    stage: 'Execução',
+      'Acompanhe a aplicação do Molde F1 passo a passo, da quantidade de produto ao posicionamento e acabamento.',
+    stage: 'Técnica na prática',
   },
   {
     number: 6,
-    title: 'Etapa 06 — Execução',
+    title: 'Manutenção',
     description:
-      'Aqui entra o conteúdo real do Módulo 06. (Conteúdo em desenvolvimento)',
-    stage: 'Acabamento',
+      'Aprenda os cuidados e o processo de manutenção necessários para preservar a estrutura do trabalho.',
+    stage: 'Cuidado contínuo',
   },
   {
     number: 7,
-    title: 'Etapa 07 — Chegada',
+    title: 'Bônus: como fotografar e vender seu trabalho',
     description:
-      'Aqui entra o conteúdo real do Módulo 07. (Conteúdo em desenvolvimento)',
-    stage: 'Prática',
+      'Saiba como valorizar seus resultados nas fotos e apresentar seu trabalho de forma mais profissional para vender seus serviços.',
+    stage: 'Divulgação e vendas',
   },
 ]
