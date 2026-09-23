@@ -12,9 +12,9 @@ export const site = {
   /**
    * ÚNICO LINK DE COMPRA DA PÁGINA.
    * Todos os CTAs apontam para este endereço.
-   * Substitua "#oferta" pelo link real do checkout quando estiver definido.
+   * Link real do checkout Kiwify.
    */
-  purchaseUrl: '#oferta',
+  purchaseUrl: 'https://pay.kiwify.com.br/TJtFtF0',
 
   // Oferta — valores confirmados pela cliente (DE → POR)
   offer: {

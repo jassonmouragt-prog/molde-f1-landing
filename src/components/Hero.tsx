@@ -16,7 +16,7 @@ export default function Hero() {
             alt=""
             className="hero__bg-img"
             width={941}
-            height={1672}
+            height={1532}
             decoding="async"
             fetchPriority="high"
           />
